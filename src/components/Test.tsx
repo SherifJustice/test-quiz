@@ -5,6 +5,7 @@ type TestProps = {
 	variants: string[]
 	progress: number
 	onAnswerClick: (index: number) => void
+	onNextClick: () => void
 }
 
 const Test: React.FC<TestProps> = ({
@@ -12,6 +13,7 @@ const Test: React.FC<TestProps> = ({
 	title,
 	variants,
 	onAnswerClick,
+	onNextClick,
 }) => {
 	return (
 		<>
@@ -28,7 +30,17 @@ const Test: React.FC<TestProps> = ({
 						{text}
 					</li>
 				))}
+				<button onClick={onNextClick}>Продолжить</button>
 			</ul>
+			<label className="container">
+				Один
+				<input type="checkbox" />
+				<span className="checkmark"></span>
+			</label>
+
+			<div className="text-field">
+				<input className="text-field__input" type="text" />
+			</div>
 		</>
 	)
 }

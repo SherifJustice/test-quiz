@@ -7,10 +7,11 @@ export type Question = {
 export interface questionsState {
 	questions: Question[]
 	currentQuestion: number
-	answers: number
+	answers: number[] | string
+	result: number
 }
 
-export const questions: Array<Question> = [
+export const questionsData: Array<Question> = [
 	{
 		title: 'React - это ... ?',
 		variants: ['библиотека', 'фреймворк', 'приложение'],
@@ -36,11 +37,12 @@ export const questions: Array<Question> = [
 	},
 	{
 		title: 'Какого цвета бананы?',
-		variants: [
-			'Это простой HTML',
-			'Это функция',
-			'Это тот же HTML, но с возможностью выполнять JS-код',
-		],
+		variants: ['Красный', 'Чёрный', 'Хороший', 'Синий'],
+		correct: 2,
+	},
+	{
+		title: 'Какого цвета бананы?',
+		variants: ['Красный', 'Чёрный', 'Хороший', 'Синий'],
 		correct: 2,
 	},
 ]
